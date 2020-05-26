@@ -127,12 +127,16 @@ Add dev and build scripts.
 
 ### Run dev script
 
+App is accessible at http://127.0.0.1:1234 
+
 {{< highlight bash >}}
 npm run dev
 {{< /highlight >}}
 
 ### Or build app files
-Files are in build folder
+
+Builded files are in build/ folder
+
 {{< highlight bash >}}
 npm run build
 {{< /highlight >}}
