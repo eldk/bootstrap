@@ -12,7 +12,7 @@ toc: true
 
 ## Importing JavaScript
 
-Import [Bootstrap's JavaScript]({{< docsref "/getting-started/javascript" >}}) by adding this line to your app's entry point (usually `index.js` or `app.js`):
+Import [Bootstrap's JavaScript]({{< docsref "/getting-started/javascript" >}}) by adding this line to your app's entry point (usually `src/index.js`):
 
 {{< highlight js >}}
 // Import all plugins
