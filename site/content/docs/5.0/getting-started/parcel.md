@@ -21,11 +21,15 @@ This means that you will have to make sure to add both of them to your `package.
 {{< highlight text >}}
 myProjectName/
 ├── build/
-├── scss
+├── node_modules/
+│   └── bootstrap
+│   └── popper.js
+├── scss/
+│   └── custom.scss
 ├── src/
 │   └── index.html
 │   └── index.js
-└── scss/
+└── package.json
 {{< /highlight >}}
 
 ## Importing JavaScript
