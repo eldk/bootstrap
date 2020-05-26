@@ -10,6 +10,9 @@ toc: true
 
 [Install bootstrap]({{< docsref "/getting-started/download#npm" >}}) as a Node.js module using npm.
 
+Bootstrap depends on [Popper](https://popper.js.org/), which is specified in the `peerDependencies` property.
+This means that you will have to make sure to add both of them to your `package.json` using `npm install popper.js`.
+
 ## Importing JavaScript
 
 Import [Bootstrap's JavaScript]({{< docsref "/getting-started/javascript" >}}) by adding this line to your app's entry point (usually `src/index.js`):
@@ -27,9 +30,6 @@ Alternatively, if you only need just a few of our plugins, you may **import plug
 import Alert as Alert from '../node_modules/bootstrap/js/dist/alert';
 ...
 {{< /highlight >}}
-
-Bootstrap depends on [Popper](https://popper.js.org/), which is specified in the `peerDependencies` property.
-This means that you will have to make sure to add both of them to your `package.json` using `npm install popper.js`.
 
 ## Importing Styles
 
