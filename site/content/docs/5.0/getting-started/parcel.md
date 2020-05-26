@@ -56,7 +56,7 @@ import Alert as Alert from '../node_modules/bootstrap/js/dist/alert';
 
 To enjoy the full potential of Bootstrap and customize it to your needs, use the source files as a part of your project's bundling process.
 
-First, create your own `scss/custom.scss` and use it to override the [built-in custom variables]({{< docsref "/customize/sass" >}}). Then, use it to add your customized variables, followed by Bootstrap import:
+Create your own `scss/custom.scss` and use it to override the [built-in custom variables]({{< docsref "/customize/sass" >}}). Then, use it to add your customized variables, followed by Bootstrap import:
 
 {{< highlight scss >}}
 //override buit-in custom variables
@@ -92,51 +92,47 @@ $breadcrumb-divider: quote(">");
 @import "../node_modules/bootstrap/scss/utilities/api";
 {{< /highlight >}}
 
-For Bootstrap to compile, make sure you install and use the required loaders: [sass-loader](https://github.com/webpack-contrib/sass-loader), [postcss-loader](https://github.com/postcss/postcss-loader) with [Autoprefixer](https://github.com/postcss/autoprefixer#webpack). With minimal setup, your webpack config should include this rule or similar:
+## Build app
 
-{{< highlight js >}}
+### Create App  HTML
+
+Include `src/index.js`
+
+{{< highlight html >}}
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+      <!-- Here 👇 -->
+      <script src="./index.js"></script>
+  </body>
+</html>
+{{< /highlight >}}
+
+### Edit `package.json`
+
+Add dev and build scripts.
+
+{{< highlight json >}}
 ...
-{
-  test: /\.(scss)$/,
-  use: [{
-    loader: 'style-loader', // inject CSS to page
-  }, {
-    loader: 'css-loader', // translates CSS into CommonJS modules
-  }, {
-    loader: 'postcss-loader', // Run postcss actions
-    options: {
-      plugins: function () { // postcss plugins, can be exported to postcss.config.js
-        return [
-          require('autoprefixer')
-        ];
-      }
-    }
-  }, {
-    loader: 'sass-loader' // compiles Sass to CSS
-  }]
-},
+"scripts": {
+    "dev": "parcel ./src/index.html",
+    "prebuild": "rm -rf build",
+    "build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting  --out-dir build"
+  },
 ...
 {{< /highlight >}}
 
-### Importing Compiled CSS
+### Run dev script
 
-Alternatively, you may use Bootstrap's ready-to-use CSS by simply adding this line to your project's entry point:
-
-{{< highlight js >}}
-import 'bootstrap/dist/css/bootstrap.min.css';
+{{< highlight >}}
+npm run dev
 {{< /highlight >}}
 
-In this case you may use your existing rule for `css` without any special modifications to webpack config, except you don't need `sass-loader` just [style-loader](https://github.com/webpack-contrib/style-loader) and [css-loader](https://github.com/webpack-contrib/css-loader).
-
-{{< highlight js >}}
-...
-module: {
-  rules: [
-    {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
-    }
-  ]
-}
-...
+### Or build app files
+Files are in build folder
+{{< highlight >}}
+npm run build
 {{< /highlight >}}
