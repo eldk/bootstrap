@@ -67,7 +67,7 @@ $body-bg: #9cf;
 $breadcrumb-divider: quote(">");
 
 // import bootstrap scss
-import '../../scss/custom.scss'; // Import our scss file
+@import "../node_modules/bootstrap/scss/bootstrap";
 {{< /highlight >}}
 
 For Bootstrap to compile, make sure you install and use the required loaders: [sass-loader](https://github.com/webpack-contrib/sass-loader), [postcss-loader](https://github.com/postcss/postcss-loader) with [Autoprefixer](https://github.com/postcss/autoprefixer#webpack). With minimal setup, your webpack config should include this rule or similar:
