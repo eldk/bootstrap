@@ -18,7 +18,19 @@ Bootstrap depends on [Popper](https://popper.js.org/), which is specified in the
 This means that you will have to make sure to add both of them to your `package.json` using `npm install popper.js`.
 
 
-{{< highlight text >}} bootstrap/ ├── dist/ │ ├── css/ │ └── js/ ├── site/ │ └──content/ │ └── docs/ │ └── 5.0/ │ └── examples/ ├── js/ └── scss/ {{< /highlight >}}
+{{< highlight text >}}
+bootstrap/
+├── dist/
+│   ├── css/
+│   └── js/
+├── site/
+│   └──content/
+│      └── docs/
+│          └── 5.0/
+│              └── examples/
+├── js/
+└── scss/
+{{< /highlight >}}
 
 ## Importing JavaScript
 
