@@ -6,6 +6,10 @@ group: getting-started
 toc: true
 ---
 
+## Installing Parcel Bundler
+
+[Install Parcel Bundler](https://en.parceljs.org/getting_started.html)
+
 ## Installing Bootstrap
 
 [Install bootstrap]({{< docsref "/getting-started/download#npm" >}}) as a Node.js module using npm.
