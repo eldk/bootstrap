@@ -127,12 +127,12 @@ Add dev and build scripts.
 
 ### Run dev script
 
-{{< highlight >}}
+{{< highlight bash >}}
 npm run dev
 {{< /highlight >}}
 
 ### Or build app files
 Files are in build folder
-{{< highlight >}}
+{{< highlight bash >}}
 npm run build
 {{< /highlight >}}
