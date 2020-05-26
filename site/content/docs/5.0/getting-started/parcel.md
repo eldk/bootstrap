@@ -37,11 +37,18 @@ This means that you will have to make sure to add both of them to your `package.
 
 To enjoy the full potential of Bootstrap and customize it to your needs, use the source files as a part of your project's bundling process.
 
-First, create your own `_custom.scss` and use it to override the [built-in custom variables]({{< docsref "/customize/sass" >}}). Then, use your main Sass file to import your custom variables, followed by Bootstrap:
+First, create your own `scss/custom.scss` and use it to override the [built-in custom variables]({{< docsref "/customize/sass" >}}). Then, use it to import your custom variables, followed by Bootstrap import:
 
 {{< highlight scss >}}
-@import "custom";
-@import "~bootstrap/scss/bootstrap";
+//override buit-in custom variables
+//** Background color for `<body>`.
+//$body-bg: #9cf;
+
+// breadcrumb
+//$breadcrumb-divider: quote(">");
+
+// import bootstrap scss
+import '../../scss/custom.scss'; // Import our scss file
 {{< /highlight >}}
 
 For Bootstrap to compile, make sure you install and use the required loaders: [sass-loader](https://github.com/webpack-contrib/sass-loader), [postcss-loader](https://github.com/postcss/postcss-loader) with [Autoprefixer](https://github.com/postcss/autoprefixer#webpack). With minimal setup, your webpack config should include this rule or similar:
