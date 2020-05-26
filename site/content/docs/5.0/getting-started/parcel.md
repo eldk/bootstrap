@@ -19,16 +19,12 @@ This means that you will have to make sure to add both of them to your `package.
 
 
 {{< highlight text >}}
-bootstrap/
-├── dist/
-│   ├── css/
-│   └── js/
-├── site/
-│   └──content/
-│      └── docs/
-│          └── 5.0/
-│              └── examples/
-├── js/
+myProjectName/
+├── build/
+├── scss
+├── src/
+│   └── index.html
+│   └── index.js
 └── scss/
 {{< /highlight >}}
 
