@@ -17,6 +17,7 @@ toc: true
 Bootstrap depends on [Popper](https://popper.js.org/), which is specified in the `peerDependencies` property.
 This means that you will have to make sure to add both of them to your `package.json` using `npm install popper.js`.
 
+When all will be completed, your app project will be structured like this :
 
 {{< highlight text >}}
 myProjectName/
