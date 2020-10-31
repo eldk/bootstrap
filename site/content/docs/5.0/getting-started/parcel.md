@@ -114,13 +114,25 @@ Include `src/index.js`
 
 ### Edit `package.json`
 
-Add dev and build scripts.
+#### Linux and Mac users : add dev and build scripts
 
 {{< highlight json >}}
 ...
 "scripts": {
     "dev": "parcel ./src/index.html",
     "prebuild": "rm -rf build",
+    "build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting  --out-dir build"
+  },
+...
+{{< /highlight >}}
+
+#### Windows users : add dev and build scripts
+
+{{< highlight json >}}
+...
+"scripts": {
+    "dev": "parcel ./src/index.html",
+    "prebuild": "rmdir /Q/S \"build\"",
     "build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting  --out-dir build"
   },
 ...
